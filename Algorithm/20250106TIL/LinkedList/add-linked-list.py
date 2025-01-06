@@ -29,7 +29,26 @@ class LinkedList:
         return node
 
     def add_node(self, index, value):
-        return "index 번째 Node 뒤에 value 를 추가하세요!"
+        # 새로운 노드
+        new_node = Node(value)
+        # index번째에 새로운 노드를 넣어야함
+        # index - 1 번째의 노드가 필요하다.
+
+        # 만약 index가 음수가 된다면?
+        if index == 0: # 따로 예외처리
+            new_node.next = self.head
+            self.head = new_node
+            return
+
+        prev_node = self.get_node(index-1)
+        # next_node를 저장해놓는다
+        next_node = prev_node.next
+
+        prev_node.next = new_node
+        # 새로운 Node를 연결후 이전의노드를 다시 연결해줌
+        # 새로생긴 노드와 기존 자리에 있던 노드를 연결해줘야함
+        next_node.next = next_node
+
 
 
 linked_list = LinkedList(5)
