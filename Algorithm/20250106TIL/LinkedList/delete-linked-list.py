@@ -41,10 +41,17 @@ class LinkedList:
         new_node.next = next_node
 
     def delete_node(self, index):
-        return "index 번째 Node를 제거해주세요!"
-
+        # 만약 지우려는 index가 제일 첫번째 노드 일 경우
+        if index == 0:
+            self.head = self.head.next
+            return
+        prev_node = self.get_node(index - 1)
+        index_node = self.get_node(index)
+        prev_node.next = index_node.next
 
 linked_list = LinkedList(5)
 linked_list.append(12)
 linked_list.add_node(0, 3)
+
+linked_list.delete_node(1)
 linked_list.print_all()
