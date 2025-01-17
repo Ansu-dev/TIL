@@ -17,7 +17,7 @@ N = int(input())
 def main():
     solutions = list(map(int, input().split()))
     # 용액의 특성값을 오름차순 정렬
-    solutions.sort()
+    solutions.sort() # O(N log N)
 
     # 두 포인터 초기화
     left, right = 0, N - 1 # 배열의 가장 작은 인덱스, 배열의 끝 인덱스
@@ -27,7 +27,7 @@ def main():
 
     # 두 포인터 이동
     # 이 과정을 left가 right보다 작을 때 까지 반복
-    while left < right:
+    while left < right: # O(N)
         # left와 right가 가리키는 두 용액의 합을 계산
         current_sum = solutions[left] + solutions[right]
         abs_sum = abs(current_sum)
