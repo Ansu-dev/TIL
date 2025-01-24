@@ -20,7 +20,7 @@ from collections import deque
 def dfs(rooms, visited, current):
     visited[current] = True
     for next in rooms[current]:
-        if not visited[next]:
+        if not visited[next]: # O(1)
             dfs(rooms, visited, next)
 
 def bfs(rooms, visited, start):
@@ -29,12 +29,17 @@ def bfs(rooms, visited, start):
     while queue:
         current = queue.popleft()
         for next in rooms[current]:
-            if not visited[next]:
+            if not visited[next]: # O(1)
                 queue.append(next) # 방문하지 않은 방을 큐에 예약
                 visited[next] = True
 
 def solution(rooms):
     visited = [False] * len(rooms) # 방의 크기만큼 방문 배열을 늘린다.
+    # set()을 이용 가능 -> hash set
+    # {} -> dictionary
+    # visited를 초기화를 시켜놓음 => [False] * len(rooms)
+    # visited를 검사할 때 O(1)으로 시간 복잡도를 줄일 수 있음
+
     dfs(rooms, visited, 0) # dfs 0번방부터 시작
     bfs(rooms, visited, 0) # bfs 0번방부터 시작
     return all(visited) # 모든 방이 방문되어있는지 확인 (단락평가) - 첫번째 False 요소가 나올시 바로 종류
