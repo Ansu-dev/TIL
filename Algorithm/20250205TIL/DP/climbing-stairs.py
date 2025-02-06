@@ -22,13 +22,13 @@ def cs(n):
     if n == 2:
         return 2
     if n not in memo:
-        memo[n] = cs(n-1)+cs(n-2)
+        memo[n] = cs(n-1)+cs(n-2) # 재귀
 
     ## bottom-up 방식
     memo[1] = 1
     memo[2] = 2
     for i in range(3, n+1):
-        memo[i] = memo[i-1] + memo[i-2]
+        memo[i] = memo[i-1] + memo[i-2] # 점화식
 
     return memo[n]
 
