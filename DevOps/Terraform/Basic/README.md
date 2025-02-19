@@ -117,18 +117,19 @@ print(instance[0].id)
 
 
 ### 기본 명령어
-| 명령어  |    실행 | 
-| terraform init | 프로젝트 초기화 |
-| terraform plan | 실행 계획을 생성 |
-| terraform apply | 실행 계획을 적용 |
-| terraform destroy | 인프라 리소스를 삭제 |
-| terraform validate | 구성 파일의 문법을 검증 |
-| terraform fmt | 구성 파일을 표준 형식으로 자동 정렬 |
-| terraform show | 상태 파일이나 실행 계획의 내용을 표시 |
-| terraform output | 출력값을 표시 |
-| terraform refresh | 실제 인프라 상태를 최신 상태 파일로 업데이트 |
-| terraform import | 기존 인프라를 Terraform 상태로 가쟈옴 |
-| terraform taint | 특정 리소스를 강제로 재생성하도록 표시 |
-| terraform untaint | taint된 리소스를 원래 상태로 되돌림 |
-| terraform state | 상태 파일을 관리 |
-| terraform workspace | 워크스페이스를 관리 |
+| 명령어  |    실행 | 자주사용  |
+|------|---|---|
+| terraform init | 프로젝트 초기화 | O |
+| terraform plan | 실행 계획을 생성 | O |
+| terraform apply | 실행 계획을 적용 | O |
+| terraform destroy | 인프라 리소스를 삭제 | O |
+| terraform validate | 구성 파일의 문법을 검증 | X |
+| terraform fmt | 구성 파일을 표준 형식으로 자동 정렬 | X |
+| terraform show | 상태 파일이나 실행 계획의 내용을 표시 | X |
+| terraform output | 출력값을 표시 | X |
+| terraform refresh | 실제 인프라 상태를 최신 상태 파일로 업데이트 | X |
+| terraform import | 기존 인프라를 Terraform 상태로 가쟈옴 | X |
+| terraform taint | 특정 리소스를 강제로 재생성하도록 표시 | X |
+| terraform untaint | taint된 리소스를 원래 상태로 되돌림 | X |
+| terraform state | 상태 파일을 관리 | O |
+| terraform workspace | 워크스페이스를 관리 | X |
