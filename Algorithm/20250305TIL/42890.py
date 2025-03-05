@@ -18,9 +18,10 @@ def solution(relation):
             print(current)
             # 후보키를 판별
 
+
         for i in range(start, len(columns)):
             current.append(columns[i])
-            backtracking(i + 1, columns)
+            backtracking(i + 1, current)
             current.pop() # 백트래킹 -> 가능한 조합을 다시 살핌
 
     backtracking(start=0, current=[]) # 중복 조합을 방지하기 위해 시작 위치를 넘김
